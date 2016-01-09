@@ -1,0 +1,12 @@
+
+<% @messages.each do |message| %>
+  <div class="col-md-4">
+    <div class="message">
+      <h2 class="message-title"> <%= message.title %> </h2>
+      <%= link_to "View Message", message_path(friendly_url(message.title)), class: "btn-custom" %>
+    </div>
+  </div>
+<% end %>
+<div class="col-md-12">
+  <%= will_paginate @messages, :page_links => false %>
+</div>
