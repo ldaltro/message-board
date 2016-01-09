@@ -20,7 +20,7 @@
     <%= link_to "Back", root_path, class: "btn btn-custom" %>
     <% if user_signed_in? %>
       <% if @message.user_id == current_user.id %>
-        <%= link_to "Edit", edit_message_path(@message), class: "btn btn-custom" %>
+        <%= link_to "Edit", edit_message_path(friendly_url(@message.title)), class: "btn btn-custom" %>
         <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
       <% else %>
       <% end %>
